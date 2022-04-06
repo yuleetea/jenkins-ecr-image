@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = '502629635618.dkr.ecr.ap-south-1.amazonaws.com/jenkins-cicd'
     registryCredential = 'aws-ecr-credentials'
-    dockerImage = 'test-ecr'
+    dockerImage = 'aws-ecr'
   }
   agent any
   stages {
