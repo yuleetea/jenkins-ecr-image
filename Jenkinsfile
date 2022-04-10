@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = '502629635618.dkr.ecr.us-east-1.amazonaws.com/jenkins-cicd'
+    registry = '770399057626.dkr.ecr.us-east-1.amazonaws.com/jenkins-cicd'
     registryCredential = 'IAM_SAA'
     dockerImage = 'aws-ecr'
   }
@@ -16,7 +16,7 @@ pipeline {
     stage('Push image to ECR') {
         steps{
             script{
-                docker.withRegistry("https://" + registry, "ecr:ap-south-1:" + registryCredential) {
+                docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
                     dockerImage.push()
                 }
             }
